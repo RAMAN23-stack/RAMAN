@@ -1,0 +1,9 @@
+from telegram.ext import Updater, CommandHandler
+
+def start(update, context):
+    update.message.reply_text('Hello, welcome to my Telegram bot!')
+
+updater = Updater('YOUR_BOT_API_TOKEN', use_context=True)
+updater.dispatcher.add_handler(CommandHandler('start', start))
+updater.start_polling()
+updater.idle()
